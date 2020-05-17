@@ -12,6 +12,9 @@
 python infection.py
 ```
 
+![infection](https://user-images.githubusercontent.com/55901554/82142547-1ee45780-9878-11ea-9888-4eda73b441de.gif)
+
+
 健康な個体,発症した個体,死亡した個体(動かない),治癒した個体からなるシミュレータ.
 治癒した個体はもう二度と感染しない.
 <br><br><br>
@@ -20,6 +23,9 @@ python infection.py
 ```bash
 python infection_comparison.py
 ```
+
+![comparison_simple](https://user-images.githubusercontent.com/55901554/82142558-2b68b000-9878-11ea-90ca-0e6e2f3b4408.gif)
+
 
 1-1モデルと同様の条件で,発症した個体について移動をする/しない場合のシミュレータ.
 乱数のシードを固定してないので,結果はまちまちであるが,やや動かない場合のほうが感染者の増加率が低いように見える.
@@ -30,6 +36,8 @@ Python
 python infection_incubation.py
 ```
 
+![incubation](https://user-images.githubusercontent.com/55901554/82142575-43d8ca80-9878-11ea-8b20-95a8f68dab94.gif)
+
 健康な個体,感染した個体,発症した個体,死亡した個体(動かない),治癒した個体からなるシミュレータ.
 感染した個体は一定確立で健康な個体に戻るか,感染するかになる.
 他は12-1と同条件.
@@ -39,6 +47,8 @@ python infection_incubation.py
 ```bash
 python infection_incubation.py
 ```
+![comparison](https://user-images.githubusercontent.com/55901554/82142584-4e935f80-9878-11ea-9cef-f37e27eb5ffa.gif)
+
 現実問題,感染しているかどうかわからない状態で人は動き回ってしまうはずである.
 ので,2-1のモデルで発症者は固定するが,感染者は固定しない場合と両方とも動かすケースをシミュレーションしてみる.
 結果からすると,どちらとも大差ないように思える.感染距離や確率パラメータに依存する部分はあるが,少なくともこういった閉鎖空間では止まる,止まらないは影響しないのではないか.
@@ -49,6 +59,8 @@ python infection_incubation.py
 ```bash
 python infection_isolation.py
 ```
+
+![infection_isolation](https://user-images.githubusercontent.com/55901554/82142590-59e68b00-9878-11ea-8d26-91b10d30e4a9.gif)
 
 2-1のモデルの派生版.発症した個体について,別の場所に隔離することによって周りへの拡大を防ぐシミュレータ.
 気持ち拡大が遅れているような感じがする.
