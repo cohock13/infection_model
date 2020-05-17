@@ -24,9 +24,9 @@ from tqdm import tqdm
 """
 変数
 """
-MAX_TIME = 300##シミュレーション時間
-P_INCUBATION = 0.02##感染確率
-P_INFECTION = 0.005##発症確率
+MAX_TIME = 150##シミュレーション時間
+P_INCUBATION = 0.04##感染確率
+P_INFECTION = 0.01##発症確率
 P_HEAL = 0.005##治癒確率
 P_DEAD = 0.001##死亡確率
 RADIUS_INFECTION = 1.2##感染距離
@@ -192,7 +192,7 @@ def graph(N):
         dead_graph_y_2 = np.array(dead_graph_y_2)
 
         ##グラフ作画
-        plt.suptitle("Green:healthy Orange:incubated Red:infected Blue:healed Gray:dead")
+        plt.suptitle("Green:susceptible Orange:incubated Red:infectious Blue:healed Gray:dead")
         
         ##左上
         plt.subplot(2,2,1)
@@ -398,9 +398,9 @@ def graph(N):
                 position_2[i][j][1] += VELOCITY_COEF*velocity_2[i][j][1]
                         
     ani = animation.ArtistAnimation(fig,ims,interval=5,repeat=False)
-    ##ani.save("comparison.gif",writer="pillow",fps=60)
+    ani.save("comparison.gif",writer="pillow",fps=60)
     ##ani.save("infection_comparison.mp4",writer="ffmpeg",fps=60)
-    plt.show()
+    ##plt.show()
 
 
 def enter():

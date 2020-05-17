@@ -24,9 +24,9 @@ from tqdm import tqdm
 """
 変数
 """
-MAX_TIME = 300##シミュレーション時間
-P_INCUBATION = 0.02##感染確率
-P_INFECTION = 0.005##発症確率
+MAX_TIME = 150##シミュレーション時間
+P_INCUBATION = 0.04##感染確率
+P_INFECTION = 0.01##発症確率
 P_HEAL = 0.005##治癒確率
 P_DEAD = 0.001##死亡確率
 RADIUS_INFECTION = 1.2##感染距離
@@ -118,7 +118,7 @@ def graph(N):
         ##グラフ作画
 
         plt.subplot(2,2,1)
-        plt.suptitle("Green:healthy Orange:incubated Red:infected Blue:healed Gray:dead")
+        plt.suptitle("Green:susceptible Orange:incubated Red:infectious Blue:healed Gray:dead")
         plt.tick_params(labelbottom=False,
             labelleft=False,
             labelright=False,

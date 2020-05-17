@@ -9,10 +9,10 @@ from tqdm import tqdm
 """
 変数
 """
-MAX_TIME = 300##シミュレーションの最大時
-P_INFECTION = 0.02##感染確率
-P_HEAL = 0.001##治癒確率
-P_DEAD = 0.0005##死亡確率
+MAX_TIME = 150##シミュレーションの最大時
+P_INFECTION = 0.04##感染確率
+P_HEAL = 0.002##治癒確率
+P_DEAD = 0.001##死亡確率
 RADIUS_INFECTION = 1.2##感染距離
 
 P_DEAD = 1 - P_DEAD
@@ -202,7 +202,7 @@ def graph(N):
         plt_13 = plt.fill_between(times,healed_nums_2,color="deepskyblue")
         plt_14 = plt.fill_between(times,dead_nums_2,color="dimgray")
 
-        plt.suptitle("Green:healthy Orange:infected Blue:healed Gray:dead")
+        plt.suptitle("Green:susceptible Orange:infectious Blue:healed Gray:dead")
         ims.append([plt_1,plt_2,plt_3,plt_4,fill,plt_5,plt_6,plt_7,plt_8,plt_9,plt_10,plt_11,fill_2,plt_12,plt_13,plt_14])
 
 
@@ -276,9 +276,9 @@ def graph(N):
                     velocity_2[i][j][1] *= -1
 
     ani = animation.ArtistAnimation(fig,ims,interval=5,repeat=False)
-    ##ani.save("comparison_simple.gif",writer="pillow",fps=50)
+    ani.save("comparison_simple.gif",writer="pillow",fps=60)
     ##ani.save("comparison_simple.mp4",writer="ffmpeg",fps=60)
-    plt.show()
+    ##plt.show()
 
 
 def enter():

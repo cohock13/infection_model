@@ -26,10 +26,10 @@ from tqdm import tqdm
 """
 変数
 """
-MAX_TIME = 300##シミュレーションの最大時
-P_INFECTION = 0.02##感染確率
-P_HEAL = 0.001##治癒確率
-P_DEAD = 0.0005##死亡確率
+MAX_TIME = 180##シミュレーションの最大時
+P_INFECTION = 0.04##感染確率
+P_HEAL = 0.002##治癒確率
+P_DEAD = 0.001##死亡確率
 RADIUS_INFECTION = 1.2##感染距離
 
 P_DEAD = 1 - P_DEAD
@@ -167,9 +167,9 @@ def graph(N):
                     velocity[i][j][1] *= -1
                         
     ani = animation.ArtistAnimation(fig,ims,interval=5,repeat=False)
-    ##ani.save("infection.gif",writer="pillow",fps=50)
+    ani.save("infection.gif",writer="pillow",fps=60)
     ##ani.save("infection.mp4",writer="ffmpeg",fps=60)
-    plt.show()
+    ##plt.show()
 
 
 def enter():
